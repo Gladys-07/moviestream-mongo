@@ -124,7 +124,7 @@ moviestream-mongo/
 ## 1. Clonar repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone <https://github.com/Gladys-07/moviestream-mongo.git>
 cd moviestream-mongo
 ```
 
