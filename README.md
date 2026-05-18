@@ -207,6 +207,7 @@ La interfaz fue diseñada con un estilo moderno utilizando:
 ## Página principal
 
 Agregar aquí captura de la aplicación funcionando.
+<img width="1280" height="759" alt="Captura de pantalla 2026-05-17 a la(s) 8 13 03 p m" src="https://github.com/user-attachments/assets/f0bf954b-6502-40e5-a3ba-27e01bd1c3db" />
 
 ---
 
