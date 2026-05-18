@@ -219,7 +219,7 @@ La aplicación puede desplegarse utilizando:
 URL pública:
 
 ```txt
-Agregar aquí URL del deployment
+https://moviestream-mongo-q32k.onrender.com
 ```
 
 ---
