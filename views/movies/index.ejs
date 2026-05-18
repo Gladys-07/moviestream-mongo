@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/styles.css">
+
+<header>
+  <h1>MovieStream</h1>
+  <p>Gestión documental de películas con MongoDB</p>
+
+  <nav>
+    <a href="/movies">Películas</a>
+    <a href="/genres">Géneros</a>
+   
+</header>
+
+<main class="container">
+  <div class="actions">
+    <form class="search-box" method="GET" action="/movies">
+      <input type="text" name="search" placeholder="Buscar película..." value="<%= search %>">
+    </form>
+
+    <a class="btn" href="/movies/new">+ Nueva película</a>
+  </div>
+
+  <% if (movies.length === 0) { %>
+    <div class="empty-state">
+      <h2>No se encontraron películas</h2>
+      <p>Intenta buscar otro título o agrega una nueva película.</p>
+    </div>
+  <% } %>
+
+  <section class="grid">
+    <% movies.forEach(movie => { %>
+      <article class="card">
+        <h2><%= movie.title %></h2>
+
+        <p><strong>Año:</strong> <%= movie.year %></p>
+        <p><strong>Duración:</strong> <%= movie.duration %> min</p>
+        <p><strong>Precio:</strong> $<%= movie.price %></p>
+        <p><strong>Rating:</strong> ⭐ <%= movie.rating %></p>
+
+        <p><strong>Géneros:</strong></p>
+        <% movie.genres.forEach(genre => { %>
+          <span class="badge"><%= genre.name %></span>
+        <% }) %>
+
+        <p><strong>Actores:</strong></p>
+        <% movie.actors.forEach(actor => { %>
+          <p><%= actor.name %> como <%= actor.character %></p>
+        <% }) %>
+
+        <div class="card-actions">
+          <a class="btn btn-secondary" href="/movies/<%= movie._id %>/edit">Editar</a>
+
+          <form method="POST" action="/movies/<%= movie._id %>?_method=DELETE">
+            <button type="submit">Eliminar</button>
+          </form>
+        </div>
+      </article>
+    <% }) %>
+  </section>
+</main>

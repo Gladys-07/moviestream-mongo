@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="/styles.css">
+
+<header>
+  <h1>Nueva película</h1>
+  <p>Agrega una nueva película al catálogo documental</p>
+
+  <nav>
+    <a href="/movies">Películas</a>
+    <a href="/genres">Géneros</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="form-wrapper">
+
+    <div class="form-card-modern">
+
+      <div class="movie-preview">
+        <div class="movie-icon">🍿</div>
+
+        <div>
+          <h2>Agregar película</h2>
+          <p>Completa la información para registrar una nueva película.</p>
+        </div>
+      </div>
+
+      <form method="POST" action="/movies">
+
+        <div class="form-grid">
+
+          <div class="input-group">
+            <label>Título</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Ejemplo: Interstellar"
+              required
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Año</label>
+            <input
+              type="number"
+              name="year"
+              placeholder="2024"
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Duración (min)</label>
+            <input
+              type="number"
+              name="duration"
+              placeholder="120"
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Precio</label>
+            <input
+              type="number"
+              step="0.01"
+              name="price"
+              placeholder="59.99"
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Rating</label>
+            <input
+              type="number"
+              step="0.1"
+              name="rating"
+              placeholder="4.5"
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Actor principal</label>
+            <input
+              type="text"
+              name="actorName"
+              placeholder="Nombre del actor"
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Personaje</label>
+            <input
+              type="text"
+              name="character"
+              placeholder="Nombre del personaje"
+            >
+          </div>
+
+        </div>
+
+        <div class="input-group">
+          <label>Géneros</label>
+
+          <select name="genres" multiple class="genres-select">
+            <% genres.forEach(genre => { %>
+              <option value="<%= genre._id %>">
+                <%= genre.name %>
+              </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="form-actions">
+
+          <a href="/movies" class="btn btn-secondary">
+            Cancelar
+          </a>
+
+          <button type="submit" class="btn">
+            Guardar película
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</main>

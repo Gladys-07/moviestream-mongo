@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/styles.css">
+
+<header>
+  <h1>Nuevo género</h1>
+  <p>Agrega una categoría para clasificar tus películas</p>
+
+  <nav>
+    <a href="/movies">Películas</a>
+    <a href="/genres">Géneros</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="form-wrapper">
+    <div class="form-card-modern">
+
+      <div class="movie-preview">
+        <div class="movie-icon">🏷️</div>
+
+        <div>
+          <h2>Agregar género</h2>
+          <p>Registra un nuevo género para relacionarlo con películas.</p>
+        </div>
+      </div>
+
+      <form method="POST" action="/genres">
+        <div class="input-group">
+          <label>Nombre del género</label>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Ejemplo: Ciencia ficción" 
+            required
+          >
+        </div>
+
+        <div class="input-group">
+          <label>Descripción</label>
+          <textarea 
+            name="description" 
+            rows="5" 
+            placeholder="Describe brevemente este género..."
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <a href="/genres" class="btn btn-secondary">Cancelar</a>
+          <button type="submit" class="btn">Guardar género</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+</main>
